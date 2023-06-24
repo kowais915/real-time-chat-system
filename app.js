@@ -24,7 +24,7 @@ const io = socket(server);
 app.get('/', (req, res)=>{
     
   
-    res.sendFile(path.join(__dirname, '/index.html'));
+    res.sendFile('./public/index.html', {root: __dirname})
 })
 io.on('connection', (socket)=>{
     console.log('connection made.')
