@@ -23,7 +23,12 @@ const io = socket(server);
 
 io.on('connection', (socket)=>{
     console.log('connection made.')
+    socket.on('chat', (data)=>{
+        io.sockets.emit('chat', data);
+    })
 })
+
+module.exports = app;
 
 
 
