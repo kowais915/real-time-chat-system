@@ -8,6 +8,8 @@ const app = express();
 // middleware
 app.use(express.json());
 app.use(express.static('public'));
+app.set('view enginer', 'ejs')
+app.set('views', path.join(__dirname, 'views'));
 
 
 
@@ -24,7 +26,7 @@ const io = socket(server);
 app.get('/', (req, res)=>{
     
   
-    res.sendFile('./public/index.html', {root: __dirname})
+    res.render('index')
 })
 io.on('connection', (socket)=>{
     console.log('connection made.')
