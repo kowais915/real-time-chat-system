@@ -22,7 +22,7 @@ const server = app.listen(3000, ()=>{
 const io = socket(server);
 
 app.get('/', (req, res)=>{
-    res.sendFile('/index.html', {root: __dirname})
+    res.send("Express haha")
 })
 io.on('connection', (socket)=>{
     console.log('connection made.')
