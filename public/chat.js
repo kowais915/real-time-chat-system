@@ -9,6 +9,7 @@ const username = document.getElementById('name');
 
 btn.addEventListener('click', (e)=>{
     e.preventDefault();
+    console.log(' I was clicked')
     socket.emit('chat', {
         name: username.value,
         message: input.value
