@@ -8,8 +8,8 @@ const app = express();
 // middleware
 app.use(express.json());
 app.use(express.static('public'));
-app.set('view enginer', 'ejs')
-app.set('views', path.join(__dirname, 'views'));
+
+
 
 
 
@@ -23,11 +23,7 @@ const server = app.listen(3000, ()=>{
 
 const io = socket(server);
 
-app.get('/', (req, res)=>{
-    
-  
-    res.render('index')
-})
+
 io.on('connection', (socket)=>{
     console.log('connection made.')
     socket.on('chat', (data)=>{
