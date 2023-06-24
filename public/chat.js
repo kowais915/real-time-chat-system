@@ -1,6 +1,6 @@
 
 
-const socket = io.connect("http://localhost:3000/");
+const socket = io.connect("https://real-time-chat-system-production.up.railway.app");
 const btn = document.querySelector("button");
 const output = document.getElementById("messages");
 const input = document.getElementById("input");
