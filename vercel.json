@@ -15,3 +15,16 @@
       }
     ]
   }
+
+  {
+    "version": 2,
+    "builds": [
+      { "src": "app.js", "use": "@now/node" }
+    ],
+    "routes": [
+      { "src": "/public/(.*)", "dest": "/public/$1" },
+      { "src": "/(.*)", "dest": "/app.js" }
+    ],
+    "publicDirectory": "public"
+  }
+  
