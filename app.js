@@ -21,9 +21,9 @@ const server = app.listen(3000, ()=>{
 
 const io = socket(server);
 
-// app.get('/', (req, res)=>{
-//     res.send("Express haha")
-// })
+app.get('/', (req, res)=>{
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+})
 io.on('connection', (socket)=>{
     console.log('connection made.')
     socket.on('chat', (data)=>{
